@@ -26,7 +26,7 @@ var data=data.date;
 var heading=data.heading;
 var content=data.content;
 
-Var htmlTemplate= '
+Var htmlTemplate = `
 <html>
    <head>
        <title>
@@ -56,7 +56,7 @@ Var htmlTemplate= '
     </html>
 
 
-    ';
+    `;
      return htmlTemplate;
 }
 app.get('/', function (req, res) {
