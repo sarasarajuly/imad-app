@@ -127,7 +127,7 @@ app.get('/submit-name',function (req,res){//URL:/submit-name?name=xxxx
 });
 
 
-app.get('/articles/articleName', function (req, res) {
+app.get('/articles/:articleName', function (req, res) {
     //articleName==article-one
     //articles[articleName]={}contentobject for article-one
    
