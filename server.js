@@ -16,39 +16,7 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 
-var articles={
-    'article-one':{
-   title:'Article One|Sara',
 
-    heading:'Article One',
-    date:'Aug 24 2017',
-    content:`<p>
-                      This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article.
-                  </p>
-                   <p>
-                      This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article.
-                  </p>
-                  <p>
-                      This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article. This is my Content for my first article.
-                  </p>`
-},
-    'article-two':{
-         title:'Article Two|Sara',
-         heading:'Article Two',
-         date:'Aug 24 2017',
-        content:`<p>
-                      This is my Content for my Second article.. 
-                  </p>`
-    },
-    'article-three':{
-         title:'Article Three|Sara',
-         heading:'Article Three',
-         date:'Aug 24 2017',
-         content:`<p>
-                      This is my Content for my third article.. 
-                  </p>`
-    }
-};
 
 function createTemplate (data){
 var title=data.title;
