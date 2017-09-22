@@ -1,7 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var pool=require('pg').Pool;
+
+var Pool=require('pg').Pool;
 
 var config={
     user:'sarasarajuly',
@@ -98,7 +99,7 @@ app.get('/test-db',function(req,res){
     //return response with result
     pool.query('SELECT * FROM test',function(err,result){
         if(err){
-            res.status(500).send(err,toString());
+            res.status(500).send(err.toString());
             }else
             {
                 res.send(JSon.stringify(result));
