@@ -104,7 +104,7 @@ app.post('/login',function(req,res){
             res.status(500).send(err.toString());
         }else{
             if(result.rows.length ===0){
-                res.send(403).send('username/password is invalid');
+                res.status(403).send('username/password is invalid');
             }else{
                 //match password
                 var dbString=result.rows[0].password;
@@ -115,7 +115,7 @@ app.post('/login',function(req,res){
                 res.send('User Credentials correct');
             }else
             {
-                res.send(403).send("Username/password is Invalid !!!");
+                res.status(403).send("Username/password is Invalid !!!");
             }
             
         }
