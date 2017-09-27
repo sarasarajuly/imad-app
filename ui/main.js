@@ -1,8 +1,6 @@
 
         
-    
-  
-//Submit username/password to login
+ //Submit username/password to login
 
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
@@ -31,9 +29,7 @@ submit.onclick=function(){
             
         
         };
-        
-    
-   //Make the request
+        //Make the request
     var username=document.getElementById('username').value;
     var password=document.getElementById('password').value;
     console.log(username);
