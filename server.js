@@ -4,7 +4,7 @@ var path = require('path');
 var crypto=require('crypto');
 var bodyParser=require('body-parser');
 
-var Pool=require('pg').Pool;
+var pool=require('pg').Pool;
 
 var config={
     user:'sarasarajuly',
