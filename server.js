@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var crypto=require('crypto');
 var bodyParser=require('body-parser');
+var session=require('expres-session');
 
 var Pool=require('pg').Pool;
 
@@ -18,6 +19,11 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret:'someRandomSecretValue',
+    Cookie:{maxAge:1000*60*60*24*30}
+    
+}));
 
 
 
@@ -112,6 +118,10 @@ app.post('/login',function(req,res){
                 var hashedPassword=hash(password,salt);//creating a hashed based on password submitted and original salt
                 if(hashedPassword===dbString)
                 {
+                    req.session.auth={userId:result.rows[0].id};
+                    //set cookie with a session id
+                    //internally on server side,it maps session id to object
+                    //{auth:{userId}}
                    // var message="you have logged successfully";
                     //var resp={message:message};
                     //res.send(JSON.Stringify(resp));
@@ -124,6 +134,10 @@ app.post('/login',function(req,res){
         }
         }
     });
+});
+
+app.get('/check-login',function(req,res){
+   if(req.session &&) 
 });
     
 
